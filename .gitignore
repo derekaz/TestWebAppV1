@@ -103,6 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+# VSCode prefs files
+.vscode/
 
 # added by me to test
 build
