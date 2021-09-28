@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -32,7 +33,12 @@ module.exports = {
       "overrides": [
         {
           // enable the rule specifically for TypeScript files
-          "files": ["*.ts", "*.tsx"],
+          "files": [
+            "**/*.ts", 
+            "**/*.tsx",
+            "**/*.spec.js",
+            "**/*.spec.jsx"
+          ],
           "rules": {
             "@typescript-eslint/explicit-module-boundary-types": ["error"]
           }

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-function MainPage(): JSX.Element {
+function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
@@ -18,8 +18,4 @@ function MainPage(): JSX.Element {
     );
 }
 
-export default function App(): JSX.Element {
-    return <MainPage />;
-}
-
-// export default App;
+export default App;
