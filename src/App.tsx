@@ -1,8 +1,7 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function MainPage(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
@@ -10,7 +9,7 @@ function App() {
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
-                <p>Hiya!!</p>
+                <p>Hiya</p>
                 <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                     Learn React
                 </a>
@@ -19,4 +18,8 @@ function App() {
     );
 }
 
-export default App;
+export default function App(): JSX.Element {
+    return <MainPage />;
+}
+
+// export default App;

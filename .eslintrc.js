@@ -25,7 +25,9 @@ module.exports = {
     ],
     "rules": {
         // disable the rule for all files
-        "@typescript-eslint/explicit-module-boundary-types": "off"
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off"
       },
       "overrides": [
         {
