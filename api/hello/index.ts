@@ -25,7 +25,6 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
                 input: name,
                 message: responseMessage,
                 testFunc: testVal,
-                key: key,
                 errorText: errorText
             }
         };
