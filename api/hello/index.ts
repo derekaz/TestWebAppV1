@@ -16,6 +16,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     var errorText: String
     
     try {
+        //throw new Error("My New Error Happened")
         const client = new CosmosClient({ endpoint: dbEndpoint, key: dbKey });
         //testVal = await getData(client, context);
 
@@ -29,17 +30,17 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
             }
         };
     } catch (error) {
-        errorText = error;
-        context.log(error);
+        // errorText = error;
+        // context.log(error);
 
-        if (error.code === 409) {
-          context.log("There was a conflict with an existing item");
-        } else {
+        // if (error.code === 409) {
+        //   context.log("There was a conflict with an existing item");
+        // } else {
             context.res = {
                 status: 500,
                 body: error.message
             }
-        }
+        // }
     }
 }
 
