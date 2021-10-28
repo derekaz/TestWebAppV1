@@ -12,10 +12,10 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         ? "Hello, " + name + ". This HTTP triggered function executed successfully."
         : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
 
-    const client = new CosmosClient({ endpoint, key });
     var testVal: String[]
     
     try {
+        const client = new CosmosClient({ endpoint, key });
         testVal = await getData(client, context);
     } catch (error) {
         context.log(error);
