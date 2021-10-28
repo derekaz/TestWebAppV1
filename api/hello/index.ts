@@ -15,8 +15,8 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     var testVal: String[]
     
     try {
-        const client = new CosmosClient({ endpoint, key });
-        testVal = await getData(client, context);
+        //const client = new CosmosClient({ endpoint, key });
+        //testVal = await getData(client, context);
     } catch (error) {
         context.log(error);
 
