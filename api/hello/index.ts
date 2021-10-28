@@ -18,25 +18,31 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     try {
         const client = new CosmosClient({ endpoint, key });
         //testVal = await getData(client, context);
+
+        context.res = {
+            // status: 200, /* Defaults to 200 */
+            body: {
+                input: name,
+                message: responseMessage,
+                testFunc: testVal,
+                key: key,
+                errorText: errorText
+            }
+        };
     } catch (error) {
-        errorText = error.message;
+        errorText = error;
         context.log(error);
 
         if (error.code === 409) {
           context.log("There was a conflict with an existing item");
         }
-    }
-
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: {
-            input: name,
-            message: responseMessage,
-            testFunc: testVal,
-            errorText: errorText
+    
+        context.res = {
+            status: 500,
+            body: error.message
         }
-    };
-};
+    }
+}
 
 async function getData(client: CosmosClient, context: Context) : Promise<String[]> {
     context.log('getData');
