@@ -1,8 +1,9 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { CosmosClient } from "@azure/cosmos"
 
-// const { CosmosClient } = require("@azure/cosmos");
+//import { CosmosClient } from "@azure/cosmos";
 const dbEndpoint = "https://azmoore-westus2-cdb.documents.azure.com:443/";
+const masterKey = "JzV6skOZBIDQKJ8rtbNYxJVKDN4sENAQBpvUyBwstIVvVgwRM9n7tj5uyqTGVOput38mheTJ3duwWr76BQxYaA==";
 const dbKey = "dBXaz7Sws2V2ie02hAB84KBEuhEYl64ai2PD3Kat3iKdNeb2yzqxB6W60Og15z7MLljRd68mIIBQdu5vBI5oAw==";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
@@ -17,7 +18,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     
     try {
         //throw new Error("My New Error Happened")
-        const client = new CosmosClient({ endpoint: dbEndpoint, key: dbKey });
+        const client = new CosmosClient({ endpoint: dbEndpoint, key: masterKey });
         //testVal = await getData(client, context);
 
         context.res = {
