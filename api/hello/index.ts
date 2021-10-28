@@ -30,7 +30,8 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         body: {
             input: name,
             message: responseMessage,
-            testFunc: testVal
+            testFunc: testVal,
+            endpoint: endpoint
         }
     };
 };
