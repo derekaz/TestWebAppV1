@@ -1,5 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { CosmosClient } from "@azure/cosmos"
+import { debug } from "console";
 
 //import { CosmosClient } from "@azure/cosmos";
 const dbEndpoint = "https://azmoore-westus2-cdb.documents.azure.com:443/";
@@ -7,6 +8,8 @@ const masterKey = "JzV6skOZBIDQKJ8rtbNYxJVKDN4sENAQBpvUyBwstIVvVgwRM9n7tj5uyqTGV
 const dbKey = "dBXaz7Sws2V2ie02hAB84KBEuhEYl64ai2PD3Kat3iKdNeb2yzqxB6W60Og15z7MLljRd68mIIBQdu5vBI5oAw==";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
+    console.log("test");
+    
     context.log('HTTP trigger function processed a request.');
     const name = (req.query.name || (req.body && req.body.name));
     const responseMessage = name
