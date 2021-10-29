@@ -8,7 +8,7 @@ const masterKey = "JzV6skOZBIDQKJ8rtbNYxJVKDN4sENAQBpvUyBwstIVvVgwRM9n7tj5uyqTGV
 const dbKey = "dBXaz7Sws2V2ie02hAB84KBEuhEYl64ai2PD3Kat3iKdNeb2yzqxB6W60Og15z7MLljRd68mIIBQdu5vBI5oAw==";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-    console.log("test");
+    context.log('test');
     
     context.log('HTTP trigger function processed a request.');
     const name = (req.query.name || (req.body && req.body.name));
@@ -20,9 +20,8 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     var errorText: String
     
     try {
-        //throw new Error("My New Error Happened")
         const client = new CosmosClient({ endpoint: dbEndpoint, key: masterKey });
-        //testVal = await getData(client, context);
+        testVal = await getData(client, context);
 
         context.res = {
             // status: 200, /* Defaults to 200 */
