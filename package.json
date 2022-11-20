@@ -25,5 +25,8 @@
     "@azure/static-web-apps-cli": "^0.8.0",
     "azure-functions-core-tools": "^3.0.3785",
     "concurrently": "^6.3.0"
+  },
+  "dependencies": {
+    "react-scripts": "^5.0.1"
   }
 }
